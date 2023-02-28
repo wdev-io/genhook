@@ -1,5 +1,11 @@
 # Genhook - Generic Webhook Handler
 
+[![Docker Build](https://github.com/wdev-io/genhook/actions/workflows/build.yml/badge.svg)](https://github.com/wdev-io/genhook/actions/workflows/build.yml)
+[![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/wdev-io/genhook)
+
+A generic webhook handler, for source code please check the [Github repo](https://github.com/wdev-io/genhook), for the latest builds check the [Docker Hub page](https://hub.docker.com/r/wdevio/genhook).
+
+
 ## Usage example (docker)
 
 ```bash
