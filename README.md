@@ -15,9 +15,9 @@ $ docker run --rm -it \
 ```yaml
 version: '3.9'
 services:
-  wdev-webhook-handler:
+  genhook-webhook-handler:
     image: wdevio/genhook:latest
-    container_name: wdev-webhook-handler
+    container_name: genhook-webhook-handler
     restart: unless-stopped
     ports:
       - "9999:9999"
