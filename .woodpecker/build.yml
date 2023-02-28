@@ -1,0 +1,26 @@
+variables:
+  - &tagbuildno ${CI_BUILD_NUMBER}
+pipeline:
+  build:
+    image: woodpeckerci/plugin-docker-buildx:2
+    settings:
+      platforms:
+        - linux/amd64
+      repo:
+        from_secret: registry_repo
+      registry:
+        from_secret: registry_host
+      username:
+        from_secret: registry_user
+      password:
+        from_secret: registry_password
+      tags:
+        - *tagbuildno
+        - latest
+      dockerfile: ./Dockerfile
+      context: .
+    when:
+      event: push
+      branches:
+        - master
+      path: "**/*"
