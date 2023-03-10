@@ -1,6 +1,5 @@
 import childProcess from 'child_process';
-import { PassThrough } from 'stream';
-import pump from 'pump';
+import { PassThrough, pipeline } from 'stream';
 
 class SpawnAndPipeError extends Error {
   code: number;
@@ -14,6 +13,7 @@ class SpawnAndPipeError extends Error {
   }
 }
 
+const noop = () => {};
 const spawnAndPipe = (
   cmdWithArgs: string[],
   stdout: PassThrough
@@ -27,8 +27,8 @@ const spawnAndPipe = (
     ]
   });
 
-  pump(spawned.stdout, stdout);
-  pump(spawned.stderr, stdout);
+  pipeline(spawned.stdout, stdout, noop);
+  pipeline(spawned.stderr, stdout, noop);
 
   spawned.on('close', (code) => {
     if (code) {

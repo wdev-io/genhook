@@ -4,6 +4,9 @@
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-empty-function": "off"
+  },
   "overrides": [
     {
       "files": ["src/**/*.ts"],
