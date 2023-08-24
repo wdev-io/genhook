@@ -1,6 +1,6 @@
 variables:
   - &tagbuildno ${CI_BUILD_NUMBER}
-pipeline:
+steps:
   build:
     image: woodpeckerci/plugin-docker-buildx:2
     settings:
